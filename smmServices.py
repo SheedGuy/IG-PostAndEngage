@@ -14,7 +14,7 @@ def AddLikes(link, quantity):
     postLink = link
     resp = requests.post("https://peakerr.com/api/v2?key=" + secret 
                          + "&action=add&service=14097&link=" + postLink 
-                         + "&quantity=" + quantity)
+                         + "&quantity=" + str(quantity))
     return resp.json()
 
 def OrderStatus(orderID):
@@ -22,6 +22,9 @@ def OrderStatus(orderID):
                          + "&action=status&id=" + str(orderID))
     return resp.json()
 
+
+# print(AddLikes("https://www.instagram.com/p/CteU-FHLn3R/", 45))
+print()
 
 # These all function Properly
 # Todo:
